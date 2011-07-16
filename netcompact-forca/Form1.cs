@@ -12,7 +12,7 @@ namespace netcompact_forca
     public partial class Form1 : Form
     {
 
-        char[] alph = new char[25]; 
+        Boolean[] alph = new Boolean[1000]; 
 
         public Form1()
         {
@@ -31,17 +31,21 @@ namespace netcompact_forca
 
         private void textBox2_KeyUp(object sender, KeyEventArgs e)
         {
-            if (possui(alph[e.KeyCode]))
+            char key = (char)e.KeyValue;
+            if ( possui(key) )
                 errou();
         }
 
         private Boolean possui(char c)
         {
-
+            if (!alph[c]) alph[c] = true;
+            Console.WriteLine(alph[c] + ":" + c);
+            return alph[c];
         }
 
         private void errou()
         {
+
         }
 
     }
