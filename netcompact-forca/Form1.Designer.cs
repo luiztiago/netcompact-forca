@@ -6,7 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.MainMenu mainMenu1;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainMenu1 = new System.Windows.Forms.MainMenu();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -43,16 +41,15 @@
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btn
             // 
-            this.button1.Location = new System.Drawing.Point(49, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(21, 22);
-            this.button1.TabIndex = 0;
-            this.button1.Text = ":P";
+            this.btn.Location = new System.Drawing.Point(49, 41);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(21, 22);
+            this.btn.TabIndex = 0;
+            this.btn.Text = ":P";
             // 
             // button2
             // 
@@ -137,25 +134,17 @@
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(3, 185);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(27, 21);
+            this.textBox2.Size = new System.Drawing.Size(115, 21);
             this.textBox2.TabIndex = 17;
             this.textBox2.Text = "  A  ";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(33, 185);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(27, 21);
-            this.textBox3.TabIndex = 18;
+            this.textBox2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyUp);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(240, 268);
-            this.Controls.Add(this.textBox3);
+            this.ClientSize = new System.Drawing.Size(240, 294);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.progressBar3);
@@ -168,8 +157,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Menu = this.mainMenu1;
+            this.Controls.Add(this.btn);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -178,7 +166,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -191,7 +179,6 @@
         private System.Windows.Forms.ProgressBar progressBar3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
 
     }
 }
