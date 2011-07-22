@@ -11,12 +11,15 @@ namespace netcompact_forca
 {
     public partial class Form1 : Form
     {
-
-        Boolean[] alph = new Boolean[1000]; 
+        int i = 0;
+        String word = "";
+        Boolean[] alph = new Boolean[1000];
 
         public Form1()
         {
             InitializeComponent();
+            textBox2.Focus();
+             
         }
 
         private void label1_ParentChanged(object sender, EventArgs e)
@@ -29,23 +32,44 @@ namespace netcompact_forca
 
         }
 
-        private void textBox2_KeyUp(object sender, KeyEventArgs e)
+        private void show(char c)
         {
-            char key = (char)e.KeyValue;
-            if ( possui(key) )
-                errou();
+            Console.WriteLine(Convert.ToString(c));
+            textBox2.Text = Convert.ToString(c);
+            
         }
 
-        private Boolean possui(char c)
+        private void checkGame(char c)
         {
-            if (!alph[c]) alph[c] = true;
-            Console.WriteLine(alph[c] + ":" + c);
-            return alph[c];
+            if (hasChar(c))
+            {
+                show(c); return;
+            }
+            if (++i == 6) gameOver();
         }
 
-        private void errou()
-        {
+        private void gameOver() {
+            cabeca.Text = ":P";
+        }   
 
+        private Boolean hasChar(char c)
+        {
+            for (int i = 0; i < word.Length; i++)
+                if (word[i] == c) return true;
+            return false;
+        }
+
+        private void keyboardClick(Button button)
+        {
+            char shar = Convert.ToChar(button.Text);
+            checkGame(shar);
+
+            button.Enabled = false;
+        }
+
+        private void Q_Click(object sender, EventArgs e)
+        {
+            keyboardClick(Q);
         }
 
     }

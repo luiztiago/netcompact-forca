@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace netcompact_forca
 {
     static class Program
-    {
+    {                   
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
