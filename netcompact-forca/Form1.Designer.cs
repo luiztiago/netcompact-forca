@@ -75,7 +75,6 @@
             this.cabeca.TabIndex = 0;
             this.cabeca.Text = ":P";
             this.cabeca.Visible = false;
-            
             // 
             // corpo
             // 

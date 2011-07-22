@@ -15,6 +15,25 @@ namespace netcompact_forca
         String word = "";
         Boolean[] alph = new Boolean[1000];
 
+        Object[] boneco = new Object[6];
+        String[] palavras = new String[6];
+
+        Button botaoClicado;
+
+        /*boneco[0] = cabeca;
+        boneco[1] = corpo;
+        boneco[2] = bracoesq;
+        boneco[3] = bracodir;
+        boneco[4] = pernaesq;
+        boneco[5] = pernadir;
+
+        palavra[0] = "CELULAR";
+        palavra[1] = "CERVEJA";
+        palavra[2] = "COMPUTADOR";
+        palavra[3] = "RAFAEL";
+        palavra[4] = "TIAGO";
+        palavra[5] = "PEDRO";*/
+
         public Form1()
         {
             InitializeComponent();
@@ -61,15 +80,23 @@ namespace netcompact_forca
 
         private void keyboardClick(Button button)
         {
-            char shar = Convert.ToChar(button.Text);
-            checkGame(shar);
+            //char shar = Convert.ToChar(button.Text);
+            //checkGame(shar);
 
             button.Enabled = false;
+            button.BackColor = System.Drawing.Color.Red;
+
+            string text = button.Text;
+            char[] characters = text.ToCharArray();
+            
         }
 
         private void Q_Click(object sender, EventArgs e)
         {
-            keyboardClick(Q);
+
+            botaoClicado = sender as Button;
+            keyboardClick(botaoClicado);
+
         }
 
     }
