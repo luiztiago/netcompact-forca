@@ -12,7 +12,7 @@ namespace netcompact_forca
     public partial class Form1 : Form
     {
         int i = 0;
-        String word = "BICICLETA";
+        String wordSelected = "BICICLETA";
         Boolean[] alph = new Boolean[1000];
 
         Object[] boneco = new Object[6];
@@ -20,25 +20,50 @@ namespace netcompact_forca
 
         Button botaoClicado;
 
-        /*boneco[0] = cabeca;
-        boneco[1] = corpo;
-        boneco[2] = bracoesq;
-        boneco[3] = bracodir;
-        boneco[4] = pernaesq;
-        boneco[5] = pernadir;
-
-        palavra[0] = "CELULAR";
-        palavra[1] = "CERVEJA";
-        palavra[2] = "COMPUTADOR";
-        palavra[3] = "RAFAEL";
-        palavra[4] = "TIAGO";
-        palavra[5] = "PEDRO";*/
-
         public Form1()
         {
             InitializeComponent();
-            textBox2.Focus();
-             
+            startGame();
+        }
+
+        private void startGame() 
+        {
+            configureElements();
+            selectRandomWord();
+            showInitStatusGame();
+        }
+
+        private void showInitStatusGame()
+        {
+            cabeca.Text = "";
+            for (int i = 0; i < boneco.Length; i++)
+            {
+                (boneco[i] as Button).Visible = false;
+            }
+
+            String underline = "";
+            for (int i = 0; i < wordSelected.Length; i++)
+            {
+                underline += " _ ";
+            }
+            textBox2.Text = underline;
+        }
+
+        private void configureElements()
+        {
+            boneco[0] = cabeca;
+            boneco[1] = corpo;
+            boneco[2] = bracoesq;
+            boneco[3] = bracodir;
+            boneco[4] = pernaesq;
+            boneco[5] = pernadir;
+
+            palavras[0] = "CELULAR";
+            palavras[1] = "CERVEJA";
+            palavras[2] = "COMPUTADOR";
+            palavras[3] = "RAFAEL";
+            palavras[4] = "TIAGO";
+            palavras[5] = "PEDRO";
         }
 
         private void label1_ParentChanged(object sender, EventArgs e)
@@ -51,11 +76,53 @@ namespace netcompact_forca
 
         }
 
+        private Boolean hasOccurrence(int index, positions)
+        {
+            //for(int i = 0; i < posi
+            // parei aqui
+            return false;
+        }
+
         private void show(char c)
         {
-            Console.WriteLine(Convert.ToString(c));
-            textBox2.Text = Convert.ToString(c);
+            int[] positions = getPositions(c);
+            String swap, leftover = "";
+            int pos = 0;
+            for (int i = 0; i < wordSelected.Length; i++)
+            {
+                
+                if (i == 0) swap = wordSelected.Substring(0, 2);
+                else
+                {
+                    pos = positions[i] * 3;
+                    swap = wordSelected.Substring(pos, pos + 2);
+                }
+                swap += swap;
+            }
+        }
+
+        private int[] getPositions(char c)
+        {
+            String founds = "";
+            for (int i = 0; i < wordSelected.Length; i++)
+            {
+                if (wordSelected[i] == c) founds += i;
+            }
+
+            int[] positions = new int[founds.Length]; 
+            for (int i = 0; i < founds.Length; i++)
+            {
+                positions[i] = founds[i];
+            }
+            return positions;
             
+        }
+
+        private void selectRandomWord()
+        {
+            Random randObj = new Random();
+            int index = randObj.Next(0, palavras.Length -1);
+            wordSelected = palavras[index];
         }
 
         private void checkGame(char c)
@@ -73,8 +140,8 @@ namespace netcompact_forca
 
         private Boolean hasChar(char c)
         {
-            for (int i = 0; i < word.Length; i++)
-                if (word[i] == c) return true;
+            for (int i = 0; i < wordSelected.Length; i++)
+                if (wordSelected[i] == c) return true;
             return false;
         }
 
@@ -88,15 +155,12 @@ namespace netcompact_forca
 
             string text = button.Text;
             char[] characters = text.ToCharArray();
-            
         }
 
         private void Q_Click(object sender, EventArgs e)
         {
-
             botaoClicado = sender as Button;
             keyboardClick(botaoClicado);
-
         }
 
         private void A_Click(object sender, EventArgs e)
