@@ -75,7 +75,6 @@
             this.cabeca.TabIndex = 0;
             this.cabeca.Text = ":P";
             this.cabeca.Visible = false;
-            
             // 
             // corpo
             // 
@@ -177,6 +176,7 @@
             this.E.Size = new System.Drawing.Size(17, 20);
             this.E.TabIndex = 38;
             this.E.Text = "E";
+            this.E.Click += new System.EventHandler(this.E_Click);
             // 
             // R
             // 
@@ -193,6 +193,7 @@
             this.T.Size = new System.Drawing.Size(17, 20);
             this.T.TabIndex = 40;
             this.T.Text = "T";
+            this.T.Click += new System.EventHandler(this.T_Click);
             // 
             // Y
             // 
@@ -217,6 +218,7 @@
             this.I.Size = new System.Drawing.Size(17, 20);
             this.I.TabIndex = 43;
             this.I.Text = "I";
+            this.I.Click += new System.EventHandler(this.I_Click);
             // 
             // O
             // 
@@ -241,6 +243,7 @@
             this.L.Size = new System.Drawing.Size(17, 20);
             this.L.TabIndex = 54;
             this.L.Text = "L";
+            this.L.Click += new System.EventHandler(this.L_Click);
             // 
             // K
             // 
@@ -305,6 +308,7 @@
             this.A.Size = new System.Drawing.Size(17, 20);
             this.A.TabIndex = 46;
             this.A.Text = "A";
+            this.A.Click += new System.EventHandler(this.A_Click);
             // 
             // M
             // 
@@ -329,6 +333,7 @@
             this.B.Size = new System.Drawing.Size(17, 20);
             this.B.TabIndex = 59;
             this.B.Text = "B";
+            this.B.Click += new System.EventHandler(this.B_Click);
             // 
             // V
             // 
@@ -345,6 +350,7 @@
             this.C.Size = new System.Drawing.Size(17, 20);
             this.C.TabIndex = 57;
             this.C.Text = "C";
+            this.C.Click += new System.EventHandler(this.C_Click);
             // 
             // X
             // 
@@ -361,6 +367,7 @@
             this.Z.Size = new System.Drawing.Size(17, 20);
             this.Z.TabIndex = 55;
             this.Z.Text = "Z";
+            this.Z.Click += new System.EventHandler(this.Z_Click);
             // 
             // Form1
             // 

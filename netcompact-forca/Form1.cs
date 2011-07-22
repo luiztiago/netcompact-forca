@@ -12,7 +12,7 @@ namespace netcompact_forca
     public partial class Form1 : Form
     {
         int i = 0;
-        String word = "";
+        String word = "BICICLETA";
         Boolean[] alph = new Boolean[1000];
 
         public Form1()
@@ -70,6 +70,46 @@ namespace netcompact_forca
         private void Q_Click(object sender, EventArgs e)
         {
             keyboardClick(Q);
+        }
+
+        private void A_Click(object sender, EventArgs e)
+        {
+            keyboardClick(A);
+        }
+
+        private void C_Click(object sender, EventArgs e)
+        {
+            keyboardClick(C);
+        }
+
+        private void T_Click(object sender, EventArgs e)
+        {
+            keyboardClick(T);
+        }
+
+        private void B_Click(object sender, EventArgs e)
+        {
+            keyboardClick(B);
+        }
+
+        private void Z_Click(object sender, EventArgs e)
+        {
+            keyboardClick(Z);
+        }
+
+        private void E_Click(object sender, EventArgs e)
+        {
+            keyboardClick(E);
+        }
+
+        private void L_Click(object sender, EventArgs e)
+        {
+            keyboardClick(L);
+        }
+
+        private void I_Click(object sender, EventArgs e)
+        {
+            keyboardClick(I);
         }
 
     }
