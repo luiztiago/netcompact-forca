@@ -97,6 +97,7 @@ namespace netcompact_forca
         private void show(char c)
         {
             int[] positions = getPositions(c);
+            int acertos = 0;
             String swap = "";
             for (int i = 0; i < wordSelected.Length; i++)
             {
@@ -105,6 +106,7 @@ namespace netcompact_forca
 
                 if (joined)
                 {
+                    acertos++;
                     swap += " " + wordSelected[i] + " "; continue;
                 }
 
@@ -113,13 +115,15 @@ namespace netcompact_forca
                     
                     swap += " _ "; continue;
                 }
-                //if (!occur && joined)
-                //{
-                //    swap += " _ "; continue;
-                //}
 
                 swap += " " + wordSelected[i] + " ";
             }
+
+            if (acertos == wordSelected.Length)
+            {
+                gameComplete();
+            }
+
             textBox2.Text = swap;
             entries[war++] = c;
         }
@@ -154,12 +158,54 @@ namespace netcompact_forca
             {
                 show(c); return;
             }
-            // metodo inserir parte do boneco
-            if (++chance == 6) gameOver();
+            chance++;
+            errou();
+            if (chance == 6) gameOver();
+        }
+
+        private void errou()
+        {
+            Button parte = new Button();
+            switch(chance)
+            {
+                case 1:
+                    parte = cabeca;
+                    break;
+                case 2:
+                    parte = corpo;
+                    break;
+                case 3:
+                    parte = bracoesq;
+                    break;
+                case 4:
+                    parte = bracodir;
+                    break;
+                case 5:
+                    parte = pernaesq;
+                    break;
+                case 6:
+                    parte = pernadir;
+                    break;
+                default:
+                    break;
+            }
+
+            parte.Visible = true;
         }
 
         private void gameOver() {
-            cabeca.Text = ":P";
+            cabeca.Text = "X_X";
+            MessageBox.Show("Que pena, voce perdeu!");
+            resetGame();
+            selectRandomWord();
+        }
+
+        private void gameComplete()
+        {
+            cabeca.Text = "O_O";
+            MessageBox.Show("Parabens, voce ganhou!");
+            resetGame();
+            selectRandomWord();
         }   
 
         private Boolean hasChar(char c)
@@ -178,10 +224,74 @@ namespace netcompact_forca
             checkGame(chara); 
         }
 
+        private void resetGame()
+        {
+            cabeca.Visible = false;
+            cabeca.Text = "";
+            corpo.Visible = false;
+            bracoesq.Visible = false;
+            bracodir.Visible = false;
+            pernaesq.Visible = false;
+            pernadir.Visible = false;
+            textBox2.Text = "";
+
+            Q.Enabled = true;
+            W.Enabled = true;
+            E.Enabled = true;
+            R.Enabled = true;
+            T.Enabled = true;
+            Y.Enabled = true;
+            U.Enabled = true;
+            I.Enabled = true;
+            O.Enabled = true;
+            P.Enabled = true;
+            A.Enabled = true;
+            S.Enabled = true;
+            D.Enabled = true;
+            F.Enabled = true;
+            G.Enabled = true;
+            H.Enabled = true;
+            J.Enabled = true;
+            K.Enabled = true;
+            L.Enabled = true;
+            Z.Enabled = true;
+            X.Enabled = true;
+            C.Enabled = true;
+            V.Enabled = true;
+            B.Enabled = true;
+            N.Enabled = true;
+            M.Enabled = true;
+            Q.BackColor = System.Drawing.SystemColors.Control;
+            W.BackColor = System.Drawing.SystemColors.Control;
+            E.BackColor = System.Drawing.SystemColors.Control;
+            R.BackColor = System.Drawing.SystemColors.Control;
+            T.BackColor = System.Drawing.SystemColors.Control;
+            Y.BackColor = System.Drawing.SystemColors.Control;
+            U.BackColor = System.Drawing.SystemColors.Control;
+            I.BackColor = System.Drawing.SystemColors.Control;
+            O.BackColor = System.Drawing.SystemColors.Control;
+            P.BackColor = System.Drawing.SystemColors.Control;
+            A.BackColor = System.Drawing.SystemColors.Control;
+            S.BackColor = System.Drawing.SystemColors.Control;
+            D.BackColor = System.Drawing.SystemColors.Control;
+            F.BackColor = System.Drawing.SystemColors.Control;
+            G.BackColor = System.Drawing.SystemColors.Control;
+            H.BackColor = System.Drawing.SystemColors.Control;
+            J.BackColor = System.Drawing.SystemColors.Control;
+            K.BackColor = System.Drawing.SystemColors.Control;
+            L.BackColor = System.Drawing.SystemColors.Control;
+            Z.BackColor = System.Drawing.SystemColors.Control;
+            X.BackColor = System.Drawing.SystemColors.Control;
+            C.BackColor = System.Drawing.SystemColors.Control;
+            V.BackColor = System.Drawing.SystemColors.Control;
+            B.BackColor = System.Drawing.SystemColors.Control;
+            N.BackColor = System.Drawing.SystemColors.Control;
+            M.BackColor = System.Drawing.SystemColors.Control;
+        }
+
         private void Q_Click(object sender, EventArgs e)
         {
-            botaoClicado = sender as Button;
-            keyboardClick(botaoClicado);
+            keyboardClick(Q);
         }
 
         private void A_Click(object sender, EventArgs e)
@@ -224,5 +334,89 @@ namespace netcompact_forca
             keyboardClick(I);
         }
 
+        private void W_Click(object sender, EventArgs e)
+        {
+            keyboardClick(W);
+        }
+
+        private void R_Click(object sender, EventArgs e)
+        {
+            keyboardClick(R);
+        }
+
+        private void Y_Click(object sender, EventArgs e)
+        {
+            keyboardClick(Y);
+        }
+
+        private void U_Click(object sender, EventArgs e)
+        {
+            keyboardClick(U);
+        }
+
+        private void O_Click(object sender, EventArgs e)
+        {
+            keyboardClick(O);
+        }
+
+        private void P_Click(object sender, EventArgs e)
+        {
+            keyboardClick(P);
+        }
+
+        private void S_Click(object sender, EventArgs e)
+        {
+            keyboardClick(S);
+        }
+
+        private void D_Click(object sender, EventArgs e)
+        {
+            keyboardClick(D);
+        }
+
+        private void F_Click(object sender, EventArgs e)
+        {
+            keyboardClick(F);
+        }
+
+        private void G_Click(object sender, EventArgs e)
+        {
+            keyboardClick(G);
+        }
+
+        private void H_Click(object sender, EventArgs e)
+        {
+            keyboardClick(H);
+        }
+
+        private void J_Click(object sender, EventArgs e)
+        {
+            keyboardClick(J);
+        }
+
+        private void K_Click(object sender, EventArgs e)
+        {
+            keyboardClick(K);
+        }
+
+        private void X_Click(object sender, EventArgs e)
+        {
+            keyboardClick(X);
+        }
+
+        private void V_Click(object sender, EventArgs e)
+        {
+            keyboardClick(V);
+        }
+
+        private void N_Click(object sender, EventArgs e)
+        {
+            keyboardClick(N);
+        }
+
+        private void M_Click(object sender, EventArgs e)
+        {
+            keyboardClick(M);
+        }
     }
 }

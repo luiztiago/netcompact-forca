@@ -69,11 +69,10 @@
             // 
             // cabeca
             // 
-            this.cabeca.Location = new System.Drawing.Point(49, 41);
+            this.cabeca.Location = new System.Drawing.Point(43, 41);
             this.cabeca.Name = "cabeca";
-            this.cabeca.Size = new System.Drawing.Size(21, 22);
+            this.cabeca.Size = new System.Drawing.Size(36, 22);
             this.cabeca.TabIndex = 0;
-            this.cabeca.Text = ":P";
             this.cabeca.Visible = false;
             // 
             // corpo
@@ -149,7 +148,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(115, 21);
             this.textBox2.TabIndex = 17;
-            this.textBox2.Text = "  A  ";
             // 
             // Q
             // 
