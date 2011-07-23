@@ -11,8 +11,10 @@ namespace netcompact_forca
 {
     public partial class Form1 : Form
     {
-        int i = 0;
-        String wordSelected = "BICICLETA";
+        int war = 0;
+        int chance = 0;
+        String wordSelected = "";
+        char[] entries = new char[10];
         Boolean[] alph = new Boolean[1000];
 
         Object[] boneco = new Object[6];
@@ -76,29 +78,50 @@ namespace netcompact_forca
 
         }
 
-        private Boolean hasOccurrence(int index, positions)
+        private Boolean hasOccurrence(int index, int[] positions)
         {
-            //for(int i = 0; i < posi
-            // parei aqui
+            for (int i = 0; i < positions.Length; i++)
+            {
+                if (positions[i] == index) return true;
+            }
+            return false;
+        }
+
+        private Boolean hasJoined(char c)
+        {
+            for (int i = 0; i < entries.Length; i++)
+                if (entries[i] == c) return true;
             return false;
         }
 
         private void show(char c)
         {
             int[] positions = getPositions(c);
-            String swap, leftover = "";
-            int pos = 0;
+            String swap = "";
             for (int i = 0; i < wordSelected.Length; i++)
             {
-                
-                if (i == 0) swap = wordSelected.Substring(0, 2);
-                else
+                Boolean joined = hasJoined(wordSelected[i]);
+                Boolean occur = hasOccurrence(i, positions);
+
+                if (joined)
                 {
-                    pos = positions[i] * 3;
-                    swap = wordSelected.Substring(pos, pos + 2);
+                    swap += " " + wordSelected[i] + " "; continue;
                 }
-                swap += swap;
+
+                if (wordSelected[i] != c && !occur)
+                {
+                    
+                    swap += " _ "; continue;
+                }
+                //if (!occur && joined)
+                //{
+                //    swap += " _ "; continue;
+                //}
+
+                swap += " " + wordSelected[i] + " ";
             }
+            textBox2.Text = swap;
+            entries[war++] = c;
         }
 
         private int[] getPositions(char c)
@@ -131,7 +154,8 @@ namespace netcompact_forca
             {
                 show(c); return;
             }
-            if (++i == 6) gameOver();
+            // metodo inserir parte do boneco
+            if (++chance == 6) gameOver();
         }
 
         private void gameOver() {
@@ -147,14 +171,11 @@ namespace netcompact_forca
 
         private void keyboardClick(Button button)
         {
-            //char shar = Convert.ToChar(button.Text);
-            //checkGame(shar);
-
             button.Enabled = false;
             button.BackColor = System.Drawing.Color.Red;
 
-            string text = button.Text;
-            char[] characters = text.ToCharArray();
+            char chara = Convert.ToChar(button.Text);
+            checkGame(chara); 
         }
 
         private void Q_Click(object sender, EventArgs e)
