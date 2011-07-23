@@ -14,7 +14,7 @@ namespace netcompact_forca
         int war = 0;
         int chance = 0;
         String wordSelected = "";
-        char[] entries = new char[10];
+        char[] entries = new char[20];
         Boolean[] alph = new Boolean[1000];
 
         Object[] boneco = new Object[6];
@@ -112,14 +112,13 @@ namespace netcompact_forca
 
                 if (wordSelected[i] != c && !occur)
                 {
-                    
                     swap += " _ "; continue;
                 }
 
                 swap += " " + wordSelected[i] + " ";
             }
 
-            if (acertos == wordSelected.Length)
+            if ((acertos + 1) == wordSelected.Length)
             {
                 gameComplete();
             }
@@ -218,9 +217,12 @@ namespace netcompact_forca
         private void keyboardClick(Button button)
         {
             button.Enabled = false;
-            button.BackColor = System.Drawing.Color.Red;
 
             char chara = Convert.ToChar(button.Text);
+            Boolean joined = hasJoined(chara);
+
+            button.BackColor = System.Drawing.Color.Red;
+            
             checkGame(chara); 
         }
 
@@ -234,6 +236,13 @@ namespace netcompact_forca
             pernaesq.Visible = false;
             pernadir.Visible = false;
             textBox2.Text = "";
+            chance = 0;
+            wordSelected = "";
+
+            for (int x = 0; x < entries.Length; x++)
+            {
+                entries[x] = new char();
+            }
 
             Q.Enabled = true;
             W.Enabled = true;
@@ -417,6 +426,12 @@ namespace netcompact_forca
         private void M_Click(object sender, EventArgs e)
         {
             keyboardClick(M);
+        }
+
+        private void btnWord_Click(object sender, EventArgs e)
+        {
+            resetGame();
+            wordSelected = word.Text.ToUpper();
         }
     }
 }
