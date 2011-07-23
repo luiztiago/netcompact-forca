@@ -168,6 +168,7 @@
             this.W.Size = new System.Drawing.Size(17, 20);
             this.W.TabIndex = 37;
             this.W.Text = "W";
+            this.W.Click += new System.EventHandler(this.W_Click);
             // 
             // E
             // 
@@ -185,6 +186,7 @@
             this.R.Size = new System.Drawing.Size(17, 20);
             this.R.TabIndex = 39;
             this.R.Text = "R";
+            this.R.Click += new System.EventHandler(this.R_Click);
             // 
             // T
             // 
@@ -202,6 +204,7 @@
             this.Y.Size = new System.Drawing.Size(17, 20);
             this.Y.TabIndex = 41;
             this.Y.Text = "Y";
+            this.Y.Click += new System.EventHandler(this.Y_Click);
             // 
             // U
             // 
@@ -210,6 +213,7 @@
             this.U.Size = new System.Drawing.Size(17, 20);
             this.U.TabIndex = 42;
             this.U.Text = "U";
+            this.U.Click += new System.EventHandler(this.U_Click);
             // 
             // I
             // 
@@ -227,6 +231,7 @@
             this.O.Size = new System.Drawing.Size(17, 20);
             this.O.TabIndex = 44;
             this.O.Text = "O";
+            this.O.Click += new System.EventHandler(this.O_Click);
             // 
             // P
             // 
@@ -235,6 +240,7 @@
             this.P.Size = new System.Drawing.Size(17, 20);
             this.P.TabIndex = 45;
             this.P.Text = "P";
+            this.P.Click += new System.EventHandler(this.P_Click);
             // 
             // L
             // 
@@ -252,6 +258,7 @@
             this.K.Size = new System.Drawing.Size(17, 20);
             this.K.TabIndex = 53;
             this.K.Text = "K";
+            this.K.Click += new System.EventHandler(this.K_Click);
             // 
             // J
             // 
@@ -260,6 +267,7 @@
             this.J.Size = new System.Drawing.Size(17, 20);
             this.J.TabIndex = 52;
             this.J.Text = "J";
+            this.J.Click += new System.EventHandler(this.J_Click);
             // 
             // H
             // 
@@ -268,6 +276,7 @@
             this.H.Size = new System.Drawing.Size(17, 20);
             this.H.TabIndex = 51;
             this.H.Text = "H";
+            this.H.Click += new System.EventHandler(this.H_Click);
             // 
             // G
             // 
@@ -276,6 +285,7 @@
             this.G.Size = new System.Drawing.Size(17, 20);
             this.G.TabIndex = 50;
             this.G.Text = "G";
+            this.G.Click += new System.EventHandler(this.G_Click);
             // 
             // F
             // 
@@ -284,6 +294,7 @@
             this.F.Size = new System.Drawing.Size(17, 20);
             this.F.TabIndex = 49;
             this.F.Text = "F";
+            this.F.Click += new System.EventHandler(this.F_Click);
             // 
             // D
             // 
@@ -292,6 +303,7 @@
             this.D.Size = new System.Drawing.Size(17, 20);
             this.D.TabIndex = 48;
             this.D.Text = "D";
+            this.D.Click += new System.EventHandler(this.D_Click);
             // 
             // S
             // 
@@ -300,6 +312,7 @@
             this.S.Size = new System.Drawing.Size(17, 20);
             this.S.TabIndex = 47;
             this.S.Text = "S";
+            this.S.Click += new System.EventHandler(this.S_Click);
             // 
             // A
             // 
@@ -317,6 +330,7 @@
             this.M.Size = new System.Drawing.Size(17, 20);
             this.M.TabIndex = 61;
             this.M.Text = "M";
+            this.M.Click += new System.EventHandler(this.M_Click);
             // 
             // N
             // 
@@ -325,6 +339,7 @@
             this.N.Size = new System.Drawing.Size(17, 20);
             this.N.TabIndex = 60;
             this.N.Text = "N";
+            this.N.Click += new System.EventHandler(this.N_Click);
             // 
             // B
             // 
@@ -342,6 +357,7 @@
             this.V.Size = new System.Drawing.Size(17, 20);
             this.V.TabIndex = 58;
             this.V.Text = "V";
+            this.V.Click += new System.EventHandler(this.V_Click);
             // 
             // C
             // 
@@ -359,6 +375,7 @@
             this.X.Size = new System.Drawing.Size(17, 20);
             this.X.TabIndex = 56;
             this.X.Text = "X";
+            this.X.Click += new System.EventHandler(this.X_Click);
             // 
             // Z
             // 
